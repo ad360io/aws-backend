@@ -108,7 +108,8 @@ function build_docker()
     cd "$DIR"
     docker build -t "qchain$1:latest" . \
         --build-arg python_runtime=$1 \
-        --build-arg out_dir="$2"
+        --build-arg out_dir="$2" \
+        --no-cache
 }
 
 # Run the docker container

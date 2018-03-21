@@ -20,15 +20,17 @@ function build_qchain()
 {
     # build qchain
     cd /qchain
-    $PYTHON setup.py install --user
+    ls -la qchain/nem
+    $PYTHON -m pip install . --user
 }
 
 function copy_qchain
 {
     # copy qchain to $LIBDIR
     cd /
-    site=$($PYTHON -c "import os, qchain; print(os.path.dirname(qchain.__path__[0]))")
-    cp "$site" "$OUTDIR"
+    site=$($PYTHON -c "import qchain; print(qchain.__path__[0])")
+    ls -la $site/nem
+    cp -a "$site" "$OUTDIR"
 }
 
 # CALL
