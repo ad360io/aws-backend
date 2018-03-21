@@ -6,6 +6,7 @@ FROM amazonlinux:latest
 # Configuration options
 ARG python_runtime=36
 ARG out_dir=/var/task
+# TODO: change to Github
 ARG backend_home=https://s3.us-east-2.amazonaws.com/qchain-backend/backend-master.zip
 ARG boost_home=https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
 
